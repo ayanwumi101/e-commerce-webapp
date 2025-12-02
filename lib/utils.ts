@@ -21,6 +21,17 @@ export function formatDate(date: string | Date): string {
   }).format(new Date(date))
 }
 
+export function formatDateTime(date: string | Date): string {
+  return new Intl.DateTimeFormat("en-NG", {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  }).format(new Date(date))
+}
+
 export function generateSlug(text: string): string {
   return text
     .toLowerCase()
